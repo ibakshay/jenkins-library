@@ -1368,15 +1368,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-configuration" title="Step configuration" class="md-nav__link">
-    Step configuration
+  <a href="#details" title="Details" class="md-nav__link">
+    Details
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
-    Dependencies
+  <a href="#we-recommend-to-define-values-of-step-parameters-via-configyml-file" title="We recommend to define values of step parameters via config.yml file." class="md-nav__link">
+    We recommend to define values of step parameters via config.yml file.
   </a>
   
 </li>
@@ -1633,15 +1633,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-configuration" title="Step configuration" class="md-nav__link">
-    Step configuration
+  <a href="#details" title="Details" class="md-nav__link">
+    Details
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
-    Dependencies
+  <a href="#we-recommend-to-define-values-of-step-parameters-via-configyml-file" title="We recommend to define values of step parameters via config.yml file." class="md-nav__link">
+    We recommend to define values of step parameters via config.yml file.
   </a>
   
 </li>
@@ -1699,123 +1699,179 @@
 </thead>
 <tbody>
 <tr>
-<td><code>branchName</code></td>
-<td>no</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>customTlsCertificateLinks</code></td>
-<td>no</td>
-<td></td>
+<td>branchName</td>
+<td>No</td>
+<td><nil></td>
 <td></td>
 </tr>
 <tr>
-<td><code>disableInlineComments</code></td>
-<td>no</td>
-<td></td>
-<td><code>true</code>, <code>false</code></td>
-</tr>
-<tr>
-<td><code>dockerImage</code></td>
-<td>no</td>
-<td><code>node:lts-stretch</code></td>
+<td>changeBranch</td>
+<td>No</td>
+<td><nil></td>
 <td></td>
 </tr>
 <tr>
-<td><code>githubApiUrl</code></td>
-<td>no</td>
-<td><code>https://api.github.com</code></td>
+<td>changeId</td>
+<td>No</td>
+<td><nil></td>
 <td></td>
 </tr>
 <tr>
-<td><code>githubOrg</code></td>
-<td>yes</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>githubRepo</code></td>
-<td>yes</td>
-<td></td>
+<td>changeTarget</td>
+<td>No</td>
+<td><nil></td>
 <td></td>
 </tr>
 <tr>
-<td><code>githubTokenCredentialsId</code></td>
-<td>yes</td>
-<td></td>
-<td>Jenkins credential id</td>
-</tr>
-<tr>
-<td><code>instance</code></td>
-<td>no</td>
-<td><code>SonarCloud</code></td>
+<td>customTlsCertificateLinks</td>
+<td>No</td>
+<td><nil></td>
 <td></td>
 </tr>
 <tr>
-<td><code>legacyPRHandling</code></td>
-<td>no</td>
-<td></td>
-<td><code>true</code>, <code>false</code></td>
-</tr>
-<tr>
-<td><code>options</code></td>
-<td>no</td>
-<td><code>[]</code></td>
+<td>disableInlineComments</td>
+<td>No</td>
+<td>false</td>
 <td></td>
 </tr>
 <tr>
-<td><code>organization</code></td>
-<td>no</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>projectVersion</code></td>
-<td>no</td>
-<td></td>
+<td>dockerImage</td>
+<td>No</td>
+<td>node:lts-stretch <br></td>
 <td></td>
 </tr>
 <tr>
-<td><code>script</code></td>
-<td>yes</td>
-<td></td>
+<td>dockerName</td>
+<td>No</td>
+<td>sonar <br></td>
 <td></td>
 </tr>
 <tr>
-<td><code>sonarTokenCredentialsId</code></td>
-<td>no</td>
+<td>dockerWorkspace</td>
+<td>No</td>
+<td>\<empty\> <br></td>
 <td></td>
-<td>Jenkins credential id</td>
 </tr>
 <tr>
-<td><code>verbose</code></td>
-<td>no</td>
+<td>githubApiUrl</td>
+<td>No</td>
+<td>https://api.github.com</td>
 <td></td>
-<td><code>true</code>, <code>false</code></td>
+</tr>
+<tr>
+<td>githubToken</td>
+<td>No</td>
+<td><nil></td>
+<td></td>
+</tr>
+<tr>
+<td>githubTokenCredentialsId</td>
+<td>Yes</td>
+<td><nil></td>
+<td></td>
+</tr>
+<tr>
+<td>host</td>
+<td>No</td>
+<td><nil></td>
+<td></td>
+</tr>
+<tr>
+<td>instance</td>
+<td>No</td>
+<td>SonarCloud</td>
+<td></td>
+</tr>
+<tr>
+<td>legacyPRHandling</td>
+<td>No</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>options</td>
+<td>No</td>
+<td><nil></td>
+<td></td>
+</tr>
+<tr>
+<td>organization</td>
+<td>No</td>
+<td><nil></td>
+<td></td>
+</tr>
+<tr>
+<td>owner</td>
+<td>No</td>
+<td><nil></td>
+<td></td>
+</tr>
+<tr>
+<td>projectVersion</td>
+<td>No</td>
+<td><nil></td>
+<td></td>
+</tr>
+<tr>
+<td>pullRequestProvider</td>
+<td>No</td>
+<td>GitHub</td>
+<td></td>
+</tr>
+<tr>
+<td>repository</td>
+<td>No</td>
+<td><nil></td>
+<td></td>
+</tr>
+<tr>
+<td>sonarScannerDownloadUrl</td>
+<td>No</td>
+<td>https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.3.0.2102-linux.zip</td>
+<td></td>
+</tr>
+<tr>
+<td>sonarTokenCredentialsId</td>
+<td>Yes</td>
+<td><nil></td>
+<td></td>
+</tr>
+<tr>
+<td>token</td>
+<td>No</td>
+<td><nil></td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<h2 id="details">Details<a class="headerlink" href="#details" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>branchName</code> - Non-Pull-Request voting only: Name of the SonarQube branch that should be used to report findings to. If empty, SonarQube uses its main branch per default.</li>
-<li><code>customTlsCertificateLinks</code> - List containing download links of custom TLS certificates. This is required to ensure trusted connections to instances with custom certificates.</li>
-<li><code>disableInlineComments</code> - Pull-Request voting only: Disables the pull-request decoration with inline comments. deprecated: only supported below SonarQube v7.2</li>
-<li><code>dockerImage</code> - Name of the docker image that should be used. If empty, Docker is not used and the command is executed directly on the Jenkins system. see <a href="../dockerExecute/">dockerExecute</a></li>
-<li><code>githubApiUrl</code> - Pull-Request voting only: The URL to the Github API. see <a href="https://docs.sonarqube.org/display/PLUG/GitHub+Plugin#GitHubPlugin-Usage">GitHub plugin docs</a> deprecated: only supported below SonarQube v7.2</li>
-<li><code>githubOrg</code> - Pull-Request voting only: The Github organization. @default: <code>commonPipelineEnvironment.getGithubOrg()</code></li>
-<li><code>githubRepo</code> - Pull-Request voting only: The Github repository. @default: <code>commonPipelineEnvironment.getGithubRepo()</code></li>
-<li><code>githubTokenCredentialsId</code> - Pull-Request voting only: The Jenkins credentialId for a Github token. It is needed to report findings back to the pull-request. deprecated: only supported below SonarQube v7.2</li>
-<li><code>instance</code> - The name of the SonarQube instance defined in the Jenkins settings.</li>
-<li><code>legacyPRHandling</code> - Pull-Request voting only: Activates the pull-request handling using the <a href="https://docs.sonarqube.org/display/PLUG/GitHub+Plugin">GitHub Plugin</a> (deprecated). deprecated: only supported below SonarQube v7.2</li>
-<li><code>options</code> - A list of options which are passed to the <code>sonar-scanner</code>.</li>
-<li><code>organization</code> - Organization that the project will be assigned to in SonarCloud.io.</li>
-<li><code>projectVersion</code> - The project version that is reported to SonarQube. @default: major number of <code>commonPipelineEnvironment.getArtifactVersion()</code></li>
-<li><code>script</code> - The common script environment of the Jenkinsfile running. Typically the reference to the script calling the pipeline step is provided with the <code>this</code> parameter, as in <code>script: this</code>. This allows the function to access the <code>commonPipelineEnvironment</code> for retrieving, e.g. configuration parameters.</li>
-<li><code>sonarTokenCredentialsId</code> - The Jenkins credentialsId for a SonarQube token. It is needed for non-anonymous analysis runs. see <a href="https://docs.sonarqube.org/latest/user-guide/user-token/">SonarQube docs</a></li>
-<li><code>verbose</code> - Print more detailed information into the log.</li>
+<li><code>branchName</code> :  Non-Pull-Request only: Name of the SonarQube branch that should be used to report findings to. </li>
+<li><code>changeBranch</code> :  Pull-Request only: The name of the pull-request branch. </li>
+<li><code>changeId</code> :  Pull-Request only: The id of the pull-request. </li>
+<li><code>changeTarget</code> :  Pull-Request only: The name of the base branch. </li>
+<li><code>customTlsCertificateLinks</code> :  List of comma-separated download links to custom TLS certificates. This is required to ensure trusted connections to instances with custom certificates. </li>
+<li><code>disableInlineComments</code> :  Pull-Request only: Disables the pull-request decoration with inline comments. DEPRECATED: only supported in SonarQube &lt; 7.2 </li>
+<li><code>dockerImage</code> :  Name of the docker image that should be used. If empty, Docker is not used and the command is executed directly on the Jenkins system. </li>
+<li><code>dockerName</code> :  Kubernetes only: Name of the container launching dockerImage. SideCar only: Name of the container in local network. </li>
+<li><code>dockerWorkspace</code> :  Kubernetes only: Specifies a dedicated user home directory for the container which will be passed as value for environment variable HOME. </li>
+<li><code>githubApiUrl</code> :  Pull-Request only: The URL to the Github API. see <a href="https://docs.sonarqube.org/display/PLUG/GitHub+Plugin#GitHubPlugin-Usage">GitHub plugin docs</a> DEPRECATED: only supported in SonarQube &lt; 7.2 </li>
+<li><code>githubToken</code> :  Pull-Request only: Token for Github to set status on the Pull-Request. </li>
+<li><code>githubTokenCredentialsId</code> :  Jenkins 'Secret text' credentials ID containing the token used to authenticate with the Github Server. </li>
+<li><code>host</code> :  The URL to the Sonar backend. </li>
+<li><code>instance</code> :  Jenkins only: The name of the SonarQube instance defined in the Jenkins settings. DEPRECATED: use host parameter instead </li>
+<li><code>legacyPRHandling</code> :  Pull-Request only: Activates the pull-request handling using the <a href="https://docs.sonarqube.org/display/PLUG/GitHub+Plugin">GitHub Plugin</a>. DEPRECATED: only supported in SonarQube &lt; 7.2 </li>
+<li><code>options</code> :  A list of options which are passed to the sonar-scanner. </li>
+<li><code>organization</code> :  SonarCloud.io only: Organization that the project will be assigned to in SonarCloud.io. </li>
+<li><code>owner</code> :  Pull-Request only: The owner of the scm repository. </li>
+<li><code>projectVersion</code> :  The project version that is reported to SonarQube. </li>
+<li><code>pullRequestProvider</code> :  Pull-Request only: The scm provider. </li>
+<li><code>repository</code> :  Pull-Request only: The scm repository. </li>
+<li><code>sonarScannerDownloadUrl</code> :  URL to the sonar-scanner-cli archive. </li>
+<li><code>sonarTokenCredentialsId</code> :  Jenkins 'Secret text' credentials ID containing the token used to authenticate with the Sonar Server. </li>
+<li><code>token</code> :  Token used to authenticate with the Sonar Server. </li>
 </ul>
-<h2 id="step-configuration">Step configuration<a class="headerlink" href="#step-configuration" title="Permanent link">&para;</a></h2>
-<p>We recommend to define values of step parameters via <a href="../../configuration/">config.yml file</a>.</p>
+<h2 id="we-recommend-to-define-values-of-step-parameters-via-configyml-file">We recommend to define values of step parameters via <a href="../../configuration/">config.yml file</a>.<a class="headerlink" href="#we-recommend-to-define-values-of-step-parameters-via-configyml-file" title="Permanent link">&para;</a></h2>
 <p>In following sections of the config.yml the configuration is possible:</p>
 <table>
 <thead>
@@ -1827,104 +1883,117 @@
 </thead>
 <tbody>
 <tr>
-<td><code>branchName</code></td>
+<td>branchName</td>
 <td></td>
 <td>X</td>
 </tr>
 <tr>
-<td><code>customTlsCertificateLinks</code></td>
-<td></td>
-<td>X</td>
-</tr>
-<tr>
-<td><code>disableInlineComments</code></td>
-<td></td>
-<td>X</td>
-</tr>
-<tr>
-<td><code>dockerImage</code></td>
-<td></td>
-<td>X</td>
-</tr>
-<tr>
-<td><code>githubApiUrl</code></td>
-<td>X</td>
-<td>X</td>
-</tr>
-<tr>
-<td><code>githubOrg</code></td>
-<td>X</td>
-<td>X</td>
-</tr>
-<tr>
-<td><code>githubRepo</code></td>
-<td>X</td>
-<td>X</td>
-</tr>
-<tr>
-<td><code>githubTokenCredentialsId</code></td>
-<td>X</td>
-<td>X</td>
-</tr>
-<tr>
-<td><code>instance</code></td>
-<td></td>
-<td>X</td>
-</tr>
-<tr>
-<td><code>legacyPRHandling</code></td>
-<td></td>
-<td>X</td>
-</tr>
-<tr>
-<td><code>options</code></td>
-<td></td>
-<td>X</td>
-</tr>
-<tr>
-<td><code>organization</code></td>
-<td></td>
-<td>X</td>
-</tr>
-<tr>
-<td><code>projectVersion</code></td>
-<td></td>
-<td>X</td>
-</tr>
-<tr>
-<td><code>script</code></td>
+<td>changeBranch</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><code>sonarTokenCredentialsId</code></td>
+<td>changeId</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>changeTarget</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>customTlsCertificateLinks</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>disableInlineComments</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>dockerImage</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>dockerName</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>dockerWorkspace</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>githubApiUrl</td>
 <td>X</td>
 <td>X</td>
 </tr>
 <tr>
-<td><code>verbose</code></td>
+<td>githubToken</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>host</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>instance</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>legacyPRHandling</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>options</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>organization</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>owner</td>
 <td>X</td>
 <td>X</td>
+</tr>
+<tr>
+<td>projectVersion</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>pullRequestProvider</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>repository</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>sonarScannerDownloadUrl</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>token</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
-<p>The step depends on the following Jenkins plugins</p>
-<ul>
-<li><a href="https://plugins.jenkins.io/credentials-binding">credentials-binding</a></li>
-<li><a href="https://plugins.jenkins.io/docker">docker</a></li>
-<li><a href="https://plugins.jenkins.io/kubernetes">kubernetes</a></li>
-<li><a href="https://plugins.jenkins.io/pipeline-utility-steps">pipeline-utility-steps</a></li>
-<li><a href="https://plugins.jenkins.io/sonar">sonar</a></li>
-<li><a href="https://plugins.jenkins.io/workflow-basic-steps">workflow-basic-steps</a></li>
-<li><a href="https://plugins.jenkins.io/workflow-cps-global-lib">workflow-cps-global-lib</a></li>
-<li><a href="https://plugins.jenkins.io/workflow-durable-task-step">workflow-durable-task-step</a></li>
-</ul>
-<p>The kubernetes plugin is only used if running in a kubernetes environment.
-Transitive dependencies are omitted.</p>
-<p>The list might be incomplete.</p>
-<p>Consider using the <a href="https://cloud.docker.com/u/ppiper/repository/docker/ppiper/jenkins-master">ppiper/jenkins-master</a>
-docker image. This images comes with preinstalled plugins.</p>
 <h2 id="exceptions">Exceptions<a class="headerlink" href="#exceptions" title="Permanent link">&para;</a></h2>
 <p>none</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
