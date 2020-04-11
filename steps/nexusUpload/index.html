@@ -1639,7 +1639,20 @@
                 
                 <h1 id="nexusupload">nexusUpload<a class="headerlink" href="#nexusupload" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>Upload build artifacts to a Nexus Repository Manager. Supports MTA and (multi-module) Maven projects.</p>
+<p>Upload build artifacts to a Nexus Repository Manager.</p>
+<p>Supports MTA, npm and (multi-module) Maven projects.
+MTA files will be uploaded to a Maven repository.</p>
+<p>The uploaded file-type depends on your project structure and step configuration.
+To upload Maven projects, you need a pom.xml in the project root and set the mavenRepository option.
+To upload MTA projects, you need a mta.yaml in the project root and set the mavenRepository option.
+To upload npm projects, you need a package.json in the project root and set the npmRepository option.</p>
+<p>npm:
+Publishing npm projects makes use of npm's "publish" command.
+It requires a "package.json" file in the project's root directory which has "version" set and is not delared as "private".
+To find out what will be published, run "npm publish --dry-run" in the project's root folder.
+It will use your gitignore file to exclude the mached files from publishing.
+Note: npm's gitignore parser might yield different results from your git client, to ignore a "foo" directory globally use the glob pattern "**/foo".</p>
+<p>If an image for mavenExecute is configured, and npm packages are to be published, the image must have npm installed.</p>
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1660,13 +1673,13 @@
 <tr>
 <td>dockerImage</td>
 <td>No</td>
-<td>maven:3.6-jdk-8 <br></td>
+<td>devxci/mbtci:1.0.4 <br></td>
 <td></td>
 </tr>
 <tr>
 <td>dockerName</td>
 <td>No</td>
-<td>mvn <br></td>
+<td>mvn-npm <br></td>
 <td></td>
 </tr>
 <tr>
@@ -1700,20 +1713,26 @@
 <td></td>
 </tr>
 <tr>
+<td>mavenRepository</td>
+<td>No</td>
+<td><nil></td>
+<td></td>
+</tr>
+<tr>
 <td>nexusCredentialsId</td>
 <td>Yes</td>
 <td><nil></td>
 <td></td>
 </tr>
 <tr>
-<td>password</td>
+<td>npmRepository</td>
 <td>No</td>
 <td><nil></td>
 <td></td>
 </tr>
 <tr>
-<td>repository</td>
-<td>Yes</td>
+<td>password</td>
+<td>No</td>
 <td><nil></td>
 <td></td>
 </tr>
@@ -1747,9 +1766,10 @@
 <li><code>globalSettingsFile</code> :  Path to the mvn settings file that should be used as global settings file. </li>
 <li><code>groupId</code> :  Group ID of the artifacts. Only used in MTA projects, ignored for Maven. </li>
 <li><code>m2Path</code> :  The path to the local .m2 directory, only used for Maven projects. </li>
+<li><code>mavenRepository</code> :  Name of the nexus repository for Maven and MTA deployments. If this is not provided, Maven and MTA deployment is implicitly disabled. </li>
 <li><code>nexusCredentialsId</code> :  The technical username/password credential for accessing the nexus endpoint. </li>
+<li><code>npmRepository</code> :  Name of the nexus repository for npm deployments. If this is not provided, npm deployment is implicitly disabled. </li>
 <li><code>password</code> :  Password for accessing the Nexus endpoint. </li>
-<li><code>repository</code> :  Name of the nexus repository. </li>
 <li><code>url</code> :  URL of the nexus. The scheme part of the URL will not be considered, because only http is supported. </li>
 <li><code>user</code> :  Username for accessing the Nexus endpoint. </li>
 <li><code>version</code> :  The Nexus Repository Manager version. Currently supported are 'nexus2' and 'nexus3'. </li>
@@ -1806,14 +1826,19 @@
 <td>X</td>
 </tr>
 <tr>
+<td>mavenRepository</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>npmRepository</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
 <td>password</td>
 <td></td>
 <td></td>
-</tr>
-<tr>
-<td>repository</td>
-<td></td>
-<td>X</td>
 </tr>
 <tr>
 <td>url</td>
