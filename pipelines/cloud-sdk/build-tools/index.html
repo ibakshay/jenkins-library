@@ -674,6 +674,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#lint" title="Lint" class="md-nav__link">
+    Lint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#end-to-end-tests" title="End-to-End Tests" class="md-nav__link">
     End-to-End Tests
   </a>
@@ -1826,6 +1833,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#lint" title="Lint" class="md-nav__link">
+    Lint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#end-to-end-tests" title="End-to-End Tests" class="md-nav__link">
     End-to-End Tests
   </a>
@@ -2136,6 +2150,21 @@ For the code coverage the results have to be stored in the folder <code>./s4hana
 The user is responsible to use a proper reporter for generating the results.
 We recommend the tools used in the <code>package.json</code> of this <a href="https://github.com/SAP/cloud-s4-sdk-examples/blob/scaffolding-js/package.json">example project</a>.
 If you have multiple npm packages with unit tests the names of the report files must have unique names.</p>
+<h4 id="lint">Lint<a class="headerlink" href="#lint" title="Permanent link">&para;</a></h4>
+<p>For each <code>package.json</code> where the script <code>ci-lint</code> is defined the command <code>npm run ci-lint</code> will be executed in this stage.
+The required format of the linting results is the checkstyle format as an <code>xml</code> file.
+The linting results have to be stored in a file named <code>*cilint.xml</code>, which may reside in any directory of the project.
+The linting results will then be published in Jenkins.</p>
+<p>If no script <code>ci-lint</code> is defined, the pipeline will check SAPUI5 components, if present, for the SAPUI5 recommended best practices.
+If none of the scenarios described apply and Javascript or Typescript files are present in the project, the pipeline will automatically execute ESLint.</p>
+<p>If no ESLint configuration files are present in the project directory, a general purpose configuration is used to lint all Javascript and/or Typescript files of the project.
+If, on the other hand, ESLint configuration files exist in the project, they will be used to lint Javascript files in the project.
+The execution happens according to ESLint's default execution behavior, i.e., for each JS file the ESLint config in that directory or one of the parent directories will be used to lint the file.
+Note, in this case only those files will be linted, for which an ESLint config exists.
+More details on the execution behavior of ESLint and the usage of configuration files can be found in the <a href="https://eslint.org/docs/user-guide/configuring#configuration-cascading-and-hierarchy">related documentation</a>.
+Note, if it is necessary to disable the default linting behavior, it is possible to, e.g., define a script <code>"ci-lint" : "exit 0"</code> in your <code>package.json</code>.</p>
+<p>We recommend the use of a custom defined <code>ci-lint</code> script in your <code>package.json</code> to address project specific linting requirements.</p>
+<p>Note, the parameters defined for the Lint stage in <code>.pipeline/config.yml</code> only apply in case SAPUI5 components are checked by the pipeline and are ignored otherwise.</p>
 <h4 id="end-to-end-tests">End-to-End Tests<a class="headerlink" href="#end-to-end-tests" title="Permanent link">&para;</a></h4>
 <p>This stage is only executed if you configured it in the file <code>.pipeline/config.yml</code>.</p>
 <p>The command <code>npm run ci-e2e</code> will be executed in this stage.
